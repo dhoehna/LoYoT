@@ -3,42 +3,31 @@ import pyodbc
 
 urls = (
 	'/', 'Index',
-	'/Hello', 'HelloForm'
+	'/GetLinks', 'GetLinks'
 )
 
 app = web.application(urls, globals())
 
 render = web.template.render('templates/')
 
+class Model(object):
+	def GetLinks():
+		return "Hello Valentin!"
+
+
 class Index(object):
 	def GET(self):
-		return render.Index()
+		return render.Index() #TODO: replace with the proper html name.
 
-		
-		
-class HelloForm(object):
+
+class GetLinks(object):
 	def GET(self):
-		return render.Hello(reversedString = "OMG HI", resultsTable = "")
+		return render.MainScreen() #TODO: Change Main Screen to the actual name of the website.
 		
 	def POST(self):
-		form = web.input(stringToReverse = "", resultsTable = "");
-		return render.Hello(reversedString = self.reverseThisString(form.stringToReverse),
-		resultsTable = self.getAList())
-	
-	@staticmethod
-	def reverseThisString(stringToReverse):
-		return stringToReverse[::-1]
-		
-	@staticmethod
-	def getAList():
-		table = []
-		cnxn = pyodbc.connect('DRIVER={SQL Server};SERVER=DARREN-PC\SQLEXPRESS;DATABASE=LearnOnYourOwnTime;UID=sa;PWD=-b=-b2-4ac2a')
-		cursor = cnxn.cursor()
-		cursor.execute("SELECT TOP 1000 [id] ,[tagName] FROM [LearnOnYourOwnTime].[dbo].[TagOne]")
-		row = cursor.fetchone()
-		if row:
-			table.append(row[1])
-		return table
+		form = web.input()
+		strGreeting = self.Model.GetLinks()
+		return render.MainScreen(Greeting = strGreeting)
 		
 		
 if __name__ == "__main__":
