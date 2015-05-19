@@ -16,7 +16,19 @@ class Model(object):
 
 class Index(object):
 	def GET(self):
-		return render.Index(courseTitle = "My course Title", resultsTable = ["Hello"])
+		return render.Index(courseTitle = "", resultsTable = [""])
+		
+	def POST(self):
+		form = web.input()
+		className = ""
+		if "Algebra101" in form:
+			className = "Algebra 101"
+		elif "Algebra200" in form:
+			className = "Algebra 200"
+		elif "Algebra300" in form:
+			className = "Algebra 300"
+		
+		return render.Index(courseTitle = className, resultsTable = [className])
 
 		
 		

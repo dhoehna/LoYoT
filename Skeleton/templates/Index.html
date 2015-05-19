@@ -4,111 +4,7 @@ $def with (courseTitle, resultsTable)
 <html>
 	<head>
 		<title>Learning On Your Own Time</title>
-		<link href="./static/Main.css" type="text/css" rel="stylesheet" />
-		<!--
-		<style type="text/css">
-		
-		
-#navMenu{
-	
-	margin: 0px;
-	padding: 0px;
-}
-
-#navMenu ul{
-	margin: 0px;
-	padding: 0px;
-	line-height: 30px;
-}
-
-#navMenu li{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-	float: left;
-	position: relative; 
-	background: #999;
-}
-
-#navMenu ul li a{
-	text-align: center;
-	font-family: "Comic Sans MS", cursive;
-	text-decoration:none;
-	height: 30px;
-	width: 150px;
-	display: block; 
-	color: #FFF;
-	border: 1px solid #FFF;
-	text-shadow: 1px 1px 1px #000;
-}
-
-#navMenu ul ul{
-	position: absolute;
-	visibility: hidden; 
-	top: 32px;
-}
-
-#navMenu ul li:hover ul{
-	visibility: visible;
-}
-
-#navMenu .mainClass:hover { 
-	margin-bottom: 170px;
-} 
-
-/*****************************************************************************/
-#navMenu li:hover{
-	background: #09F;
-	 
-}
-
-#navMenu ul li:hover ul li a:hover{
-	background: #CCC;
-	color: #0000;
-}
-
-#navMenu a:hover{
-	color: #000;
-}
-
-.clearFloat{
-	clear: both;
-	margin:0;
-	padding:0;
-}
-
-.classes{
-width:100px; /*same as the height*/
-height:100px; /*same as the width*/
-background-color:#ff0000;
-border:1px solid #ff0000; /*same colour as the background*/ /*SOmeone here likes to type with correct English.*/
-color:#fff;
-font-size:16pt;
-word-wrap: break-word; 
-
-
-/*give the button a small drop shadow*/
--webkit-box-shadow: 0 0 10px rgba(0,0,0, .75);
--moz-box-shadow: 0 0 10px rgba(0,0,0, .75);
-box-shadow: 2px 2px 15px rgba(0,0,0, .75);
-
-}
-
-#level2C .classes:hover{ 
-	border:2px solid white;
-}
-form { 
-margin: 0px; 
-
-} 
-
-#links h3 { 
-	width: auto; 
-	height: auto; 
-	text-align: centeral;
-} 
-
-		</style>-->
+		<link href="./static/Index.css" type="text/css" rel="stylesheet" />
 	</head>
 	<body>
 		<div id="wrapper">
@@ -173,10 +69,10 @@ margin: 0px;
 		</div> <!-- end wrapper div -->
 		
 		<div id="level2C">
-			<form name="course" action= "/GetCourses" method = "post">
-				<input class="classes" type="submit" value = "Algebra 101"/>
-				<input class="classes" type="submit" value = "Algebra 200"/>
-				<input class="classes" type="submit" value = "Algebra 300"/>
+			<form name="course" action= "/" method = "POST">
+				<input class="classes" type="submit" value = "Algebra 101" name="Algebra101"/>
+				<input class="classes" type="submit" value = "Algebra 200" name="Algebra200"/>
+				<input class="classes" type="submit" value = "Algebra 300" name="Algebra300"/>
 			</form>
 		</div>
 		
