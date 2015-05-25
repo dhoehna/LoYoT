@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+		<title>LOYT</title>
+			<script>
+				function show(ele)    {      
+					var links = ['link1','link2','link3','link4',];
+					var srcElement = document.getElementById(ele);      
+					var doShow = true;
+					if(srcElement != null && srcElement.style.display == "block")
+						doShow = false;
+					for( var i = 0; i < links.length; ++i )    {
+						var otherElement = document.getElementById(links[i+1]);      
+						if( otherElement != null )
+							otherElement.style.display = 'none';
+					}
+					if( doShow )
+						srcElement.style.display='block';         
+					return false;
+				}
+			</script>
+	</head>
+	<body>
+		<div id="header">
+			<h2>Learning On Your Time</h2>
+		</div>
+		<div class="radio-tabs">
+  
+			<input class="state" type="radio" title="Math" name="houses-state" id="Math" checked />
+			<input class="state" type="radio" title="English" name="houses-state" id="English" />
+			<input class="state" type="radio" title="Computer" name="houses-state" id="Computer" />
+
+			<div class="tabs">
+				<label for="Math" id="Math-tab" class="tab">Math</label>
+				<label for="English" id="English-tab" class="tab">English</label>
+				<label for="Computer" id="Computer-tab" class="tab">Computer Science</label>
+			</div>
+
+			<div class="panels">
+				<ul id="Math-panel" class="panel active">
+								<div id="link1">
+									<ul>
+										<li><a href="#" onclick="show('link2')">Algebra</a></li>
+										<li><a href="#" onclick="show('link3')">Calculus</a></li>
+										<li><a href="#" onclick="show('link4')">Statistics</a></li>
+									</ul>
+								</div>	
+								<div id="link2" style="display:none">
+									<ul>
+										<li><a href="#">Alg.1</a></li>
+										<li><a href="#">Alg.2</a></li>
+										<li><a href="#">Alg.3</a></li>
+									</ul>
+								</div>
+								<div id="link3" style="display:none">
+									<ul>
+										<li><a href="#">Calc.1</a></li>
+										<li><a href="#">Calc.2</a></li>
+										<li><a href="#">Calc.3</a></li>
+									</ul>
+								</div>
+								<div id="link4" style="display:none">
+									<ul>
+										<li><a href="#">Stat.1</a></li>
+										<li><a href="#">Stat.2</a></li>
+										<li><a href="#">Stat.3</a></li>
+									</ul>
+								</div>
+		
+				</ul>
+				<ul id="English-panel" class="panel">
+					<li>Tywin</li>
+					<li>Cersei</li>
+					<li>Jamie</li>
+					<li>Tyrion</li>
+				</ul>
+				<ul id="Computer-panel" class="panel">
+					<li>Viserys</li>
+					<li>Daenerys</li>
+				</ul>
+			</div>
+
+		</div>
+			<div id="final">
+				<ul>
+					<li><a href="#">SUBMIT</a></li>
+				</ul>
+			</div>
+	</body>
+</html>
