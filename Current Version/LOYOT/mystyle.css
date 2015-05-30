@@ -5,19 +5,19 @@ body {
     background-color: #ddd;
 }
 #header {
-	position: relative;
-	top: -10px;
-	background-color: #3c4543;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
+    position: relative;
+    top: -10px;
+    background-color: #3c4543;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
 }
-h2 {
-	font-family: Verdana;
-	font-weight: bold;
-	text-align: center;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	color: #acd1b2;
+h2, button {
+    font-family: Verdana;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: #acd1b2;
 }
 
 a {
@@ -26,38 +26,49 @@ a {
 }
 
 li {
-	display: inline;
-	padding: 5px 5px 5px 5px;
-	border: 2px solid #000000;
-	font-family: Futura, Tahoma, sans-serif;
-	color: #ffffff;
-	border-radius: 5px 5px;
-	background-color: #cc0323
+    display: inline;
+    padding: 5px 5px 5px 5px;
+    border: 2px solid #000000;
+    font-family: Futura, Tahoma, sans-serif;
+    color: #ffffff;
+    border-radius: 5px 5px;
+    background-color: #cc0323
 }
 
 #link2{
-position: relative;
-margin-top: 20px;
+    position: relative;
+    margin-top: 20px;
 }
 
 #link3{
-position: relative;
-margin-top: 20px;
+    position: relative;
+    margin-top: 20px;
 }
 
 #link4{
-position: relative;
-margin-top: 20px;
+    position: relative;
+    margin-top: 20px;
 }
 
-#final{
-position: fixed;
-left: 50%;
-margin-left: -100px;
-margin-top: 500px;
+#final {
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    text-align:center;
 }
 
-.radio-tabs .state {
+button {
+    width:100%;
+    background-color: #3c4543;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size : 1.0em;
+
+}
+
+
+.radio-tabs .zero {
     position: absolute;
     left: -10000px;
 }
