@@ -1,9 +1,21 @@
+$def with (submitBack, recievedInfo, contentTitle)
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<link type="text/css" rel="stylesheet" href="mystyle.css"/>
+		<script src="Index.js" type="text/javascript"></script>
+		<script src="./static/jquery-1.11.2.min.js"></script>
+		
+		<!-- 
+		<script type="text/javascript">
+			$$(document).ready(function () {
+				$$("#displayCont").text($$("#hiddenCont").text());
+			});
+		</script>-->
+
 		<title>LOYT</title>
-			<script>
+			<!--<script>
 				function show(ele)    {      
 					var links = ['link1','link2','link3','link4',];
 					var srcElement = document.getElementById(ele);      
@@ -20,16 +32,25 @@
 					return false;
 				}
 			</script>
+			-->
 	</head>
 	<body>
 		<div id="header">
 			<h2>Learning On Your Time</h2>
 		</div>
 		<div class="radio-tabs">
-  
-			<input class="state" type="radio" title="Math" name="houses-state" id="Math" checked />
+			
+			<!--<div id="first">
+				<div id="1">-->
+					<input class= "zero" type="radio" name="1" value="1" id="Math"/>
+					<input class= "zero" type="radio" name="1" value="1" id="English"/>
+					<input class= "zero" type="radio" name="1" value="1" id="Computer"/>
+			<!--	</div>
+			</div>-->
+
+			<!---<input class="state" type="radio" title="Math" name="houses-state" id="Math" checked />
 			<input class="state" type="radio" title="English" name="houses-state" id="English" />
-			<input class="state" type="radio" title="Computer" name="houses-state" id="Computer" />
+			<input class="state" type="radio" title="Computer" name="houses-state" id="Computer" />-->
 
 			<div class="tabs">
 				<label for="Math" id="Math-tab" class="tab">Math</label>
@@ -37,16 +58,22 @@
 				<label for="Computer" id="Computer-tab" class="tab">Computer Science</label>
 			</div>
 
+			<!---<div class="tabs">
+				<label for = "" id= "" class="tab"></label>
+			</div>-->
+
 			<div class="panels">
 				<ul id="Math-panel" class="panel active">
 								<div id="link1">
-									<ul>
-										<li><a href="#" onclick="show('link2')">Algebra</a></li>
-										<li><a href="#" onclick="show('link3')">Calculus</a></li>
-										<li><a href="#" onclick="show('link4')">Statistics</a></li>
-									</ul>
+									<div id="second">
+										<ul id="2">
+											<li><input type="radio" class = "1" name="2" value="1">Algebra</li>
+											<li><input type="radio" class = "1" name="2" value="2">Calculus</li>
+											<li><input type="radio" class = "1" name="2" value="3">Statistics</li>
+										</ul>
+									</div>
 								</div>	
-								<div id="link2" style="display:none">
+								<!---<div id="link2" style="display:none">
 									<ul>
 										<li><a href="#">Alg.1</a></li>
 										<li><a href="#">Alg.2</a></li>
@@ -66,7 +93,7 @@
 										<li><a href="#">Stat.2</a></li>
 										<li><a href="#">Stat.3</a></li>
 									</ul>
-								</div>
+								</div>-->
 		
 				</ul>
 				<ul id="English-panel" class="panel">
@@ -82,10 +109,26 @@
 			</div>
 
 		</div>
-			<div id="final">
-				<ul>
-					<li><a href="#">SUBMIT</a></li>
-				</ul>
-			</div>
+		
+		<div id="final">
+			<button type = "button" onclick="initBackEnd()"> Submit Content </button>
+			<div id = "content" style="display: none;">  </div>
+		</div>
+
+		<div id = "links">
+		
+			<h3> $courseTitle </h2>
+		
+			<table id="results">
+				$for Index in resultsTable:
+					<tr>
+						<td>
+							$Index
+						</td>
+					</tr>
+			</table>
+		</div>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="app.js"></script>
 	</body>
 </html>
