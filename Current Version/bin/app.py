@@ -42,16 +42,19 @@ class Model(object):
 			
 		TagFilePath += "\\static"
 		return TagFilePath
+		
+	def GetTags(whatWasPassedIn):
+		return whatWasPassedIn
+		
 
 
 class Index(object):
 	def GET(self):
-		return render.Index(courseTitle = "", resultsTable = [""])
+		return render.Index(submitBack = "", courseTitle = "")
 		
 	def POST(self):
-		form = web.input()
-		
-		return render.Index(courseTitle = className, resultsTable = [className])
+		form = web.input(submitBack = "", courseTitle = "")
+		return render.Index(submitBack = "", courseTitle = form.SubmitBack)
 
 		
 		
