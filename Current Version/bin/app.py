@@ -1,5 +1,6 @@
 import web
 import os
+import csv
 
 urls = (
 	'/', 'Index',
@@ -45,8 +46,23 @@ class Model(object):
 		TagFilePath += "\\static"
 		return TagFilePath
 		
-	def GetLinks(self, whatWasPassedIn):
-		return ["Algebra", "WebsiteOne", "Algebra", "WebsiteTwo", "Algebra", "WebsiteThree"]
+	def GetLinks(self, tags):
+		tags = tags.replace("[","")
+		tags = tags.replace("]","")
+		firstString = tags.split(",")[0]
+		secondString = tags.split(",")[1]
+	
+		endList = []
+	
+		f = open('Math.csv')
+		csv_f = csv.reader(f)
+		for row in csv_f:
+			if " " + firstString == row[2]:
+				if " " + secondString == row[3]:
+					endList += row[1],row[0]
+		f.close()
+	
+		return endList
 		
 
 
