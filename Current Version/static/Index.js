@@ -16,11 +16,6 @@ window.onload = function() {
 
 };
 
-function hello()
-{
-		alert("Hello");
-}
-
 /*--------------------------------------------------------------------------
   getlevel2()
   Adds the approriate level 1 information to the array. And checks if level 2 

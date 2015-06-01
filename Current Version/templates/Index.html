@@ -109,7 +109,14 @@ $def with (submitBack, courseTitle)
 			</div>
 
 		</div>
-		$courseTitle
+		<table>
+		$for Index in range(0, len(courseTitle), 2):
+			<tr>
+				<td>
+					<a href="$courseTitle[Index]">$courseTitle[Index + 1]</a>
+				</td>
+			</tr>
+		</table>
 		<form action="/" method="POST">
 		<div id="final">
 			<input type="hidden" name="SubmitBack" id="MyListOfStuff" value=""></input>

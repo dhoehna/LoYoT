@@ -10,7 +10,10 @@ app = web.application(urls, globals())
 render = web.template.render('templates/')
 
 class Model(object):
-	def GetLinks():
+	def __init__(self):
+		pass
+		
+	def GetTags(self):
 		TagFilePath = GetPathToStaticFolder + "\\Tags.csv"
 		TagFile = None
 		if(os.path.isfile(TagFilePath)):
@@ -35,7 +38,6 @@ class Model(object):
 		Path = os.getcwd()
 		SplitPath = Path.split('\\')
 		TagFilePath = SplitPath[0]
-
 		for PathPartIndex in range(1, len(SplitPath) - 1):
 			TagFilePath += "\\"
 			TagFilePath += SplitPath[PathPartIndex]
@@ -43,8 +45,8 @@ class Model(object):
 		TagFilePath += "\\static"
 		return TagFilePath
 		
-	def GetTags(whatWasPassedIn):
-		return whatWasPassedIn
+	def GetLinks(self, whatWasPassedIn):
+		return ["Algebra", "WebsiteOne", "Algebra", "WebsiteTwo", "Algebra", "WebsiteThree"]
 		
 
 
@@ -54,7 +56,8 @@ class Index(object):
 		
 	def POST(self):
 		form = web.input(submitBack = "", courseTitle = "")
-		return render.Index(submitBack = "", courseTitle = form.SubmitBack)
+		model = Model()
+		return render.Index(submitBack = "", courseTitle = model.GetLinks(form.submitBack))
 
 		
 		
