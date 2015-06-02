@@ -110,17 +110,17 @@ $def with (submitBack, courseTitle)
 
 		</div>
 		<table>
-		$for Index in range(0, len(courseTitle), 2):
-			<tr>
-				<td>
-					<a href="$courseTitle[Index]">$courseTitle[Index + 1]</a>
-				</td>
-			</tr>
+			$for Index in range(0, len(courseTitle), 2):
+				<tr>
+					<td>
+						<a href="$courseTitle[Index + 1]">$courseTitle[Index]</a>
+					</td>
+				</tr>
 		</table>
-		<form action="/" method="POST">
+		<form action="/" method="POST" onsubmit="initBackEnd()">
 		<div id="final">
-			<input type="hidden" name="SubmitBack" id="MyListOfStuff" value=""></input>
-			<input type="submit" id="SubmitButton" value="Submit Content" onclick="return initBackEnd();" />
+			<input type="hidden" name="submitBack" id="MyListOfStuff" value=""></input>
+			<input type="submit" id="SubmitButton" value="Submit Content" />
 			<div id="ClassLinks">
 			</div>
 		</div>

@@ -10,12 +10,23 @@ app = web.application(urls, globals())
 
 render = web.template.render('templates/')
 
+def GetPathToStaticFolder():
+		Path = os.getcwd()
+		SplitPath = Path.split('\\')
+		TagFilePath = SplitPath[0]
+		for PathPartIndex in range(1, len(SplitPath)):
+			TagFilePath += "\\"
+			TagFilePath += SplitPath[PathPartIndex]
+			
+		TagFilePath += "\\static"
+		return TagFilePath
+
 class Model(object):
 	def __init__(self):
 		pass
 		
 	def GetTags(self):
-		TagFilePath = GetPathToStaticFolder + "\\Tags.csv"
+		TagFilePath = GetPathToStaticFolder() + "\\Tags.csv"
 		TagFile = None
 		if(os.path.isfile(TagFilePath)):
 			TagFile = TagFilePath
@@ -32,20 +43,8 @@ class Model(object):
 			
 		return TagStringToReturn #Each tag will be separated by a |
 				
-		
-		
-	@staticmethod
-	def GetPathToStaticFolder():
-		Path = os.getcwd()
-		SplitPath = Path.split('\\')
-		TagFilePath = SplitPath[0]
-		for PathPartIndex in range(1, len(SplitPath) - 1):
-			TagFilePath += "\\"
-			TagFilePath += SplitPath[PathPartIndex]
-			
-		TagFilePath += "\\static"
-		return TagFilePath
-		
+				
+				
 	def GetLinks(self, tags):
 		tags = tags.replace("[","")
 		tags = tags.replace("]","")
@@ -54,7 +53,7 @@ class Model(object):
 	
 		endList = []
 	
-		f = open('Math.csv')
+		f = open(GetPathToStaticFolder() + '\\Math.csv')
 		csv_f = csv.reader(f)
 		for row in csv_f:
 			if " " + firstString == row[2]:
@@ -73,6 +72,7 @@ class Index(object):
 	def POST(self):
 		form = web.input(submitBack = "", courseTitle = "")
 		model = Model()
+		
 		return render.Index(submitBack = "", courseTitle = model.GetLinks(form.submitBack))
 
 		
