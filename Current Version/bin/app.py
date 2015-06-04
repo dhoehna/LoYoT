@@ -4,6 +4,7 @@ import csv
 
 urls = (
 	'/', 'Index',
+	'/about', 'About'
 )
 
 app = web.application(urls, globals())
@@ -74,6 +75,11 @@ class Index(object):
 		model = Model()
 		
 		return render.Index(submitBack = "", courseTitle = model.GetLinks(form.submitBack))
+		
+		
+class About(object):
+	def GET(self):
+		return render.About()
 
 		
 		
